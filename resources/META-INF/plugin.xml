@@ -1,0 +1,54 @@
+<idea-plugin url="https://github.com/KamikX/ADB-DateTime">
+    <id>com.github.kamikx.adbdatetime</id>
+    <name>ADB DateTime</name>
+    <version>1.0</version>
+    <vendor email="kamildonoval@gmail.com">
+        Kamil Donoval
+    </vendor>
+
+    <description><![CDATA[
+      Change date or time immediately over ADB:<br>
+      <ul>
+      <li>ADB must run with root permissions</li>
+      <li>works only with rooted devices / emulators</li>
+      <li>always get first device from ADB devices list</li>
+     </ul>
+
+     Ways to run plugin:<br>
+      <ul>
+      <li>through the toolbar icon  <img src="https://raw.githubusercontent.com/KamikX/ADB-DateTime/master/images/ic_main.png"/></li>
+      <li>over "Find Actions (Ctrl+shift+a)", searching for "ADB.."</li>
+     </ul>
+
+     <b>Demo</b><br>
+     <br>
+     <img src="https://raw.githubusercontent.com/KamikX/ADB-DateTime/master/images/demo.gif"/>
+
+    ]]></description>
+
+    <change-notes><![CDATA[
+    1.0: Initial version.<br>
+    ]]>
+    </change-notes>
+
+    <!-- see http://tools.android.com/build/studio/idea-tags -->
+    <!-- see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html -->
+    <idea-version since-build="162"/>
+    <depends>org.jetbrains.android</depends>
+
+    <extensions defaultExtensionNs="com.intellij"/>
+
+    <actions>
+        <action
+                id="DateTimeSetAction"
+                class="adbdatetime.actions.AdbDateTimeSetActionClass"
+                text="ADB DateTime"
+                description="ADB DateTime, change date or time immediately over ADB"
+                icon="/images/ic_main.png"
+                project-type="Android">
+            <add-to-group group-id="MainToolBar" anchor="last"/>
+            <add-to-group group-id="NavBarToolBar" anchor="first"/>
+        </action>
+    </actions>
+
+</idea-plugin>
